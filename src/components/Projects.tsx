@@ -61,6 +61,8 @@ const ProjectCard = ({
   project: (typeof projects)[0];
   index: number;
 }) => {
+  const [showAfter, setShowAfter] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -70,31 +72,37 @@ const ProjectCard = ({
       className="project-card group overflow-hidden rounded-3xl bg-card"
     >
       {/* Before/After Images */}
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div
+        className="relative aspect-[4/3] cursor-pointer overflow-hidden"
+        onClick={() => setShowAfter(!showAfter)}
+        onMouseEnter={() => setShowAfter(true)}
+        onMouseLeave={() => setShowAfter(false)}
+      >
         {/* Before Image */}
         <img
           src={project.before}
           alt={`${project.title} before redesign`}
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${showAfter ? "opacity-0" : "opacity-100"}`}
         />
         {/* After Image */}
         <img
           src={project.after}
           alt={`${project.title} after redesign`}
-          className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${showAfter ? "opacity-100" : "opacity-0"}`}
         />
         {/* Labels */}
         <div className="absolute bottom-4 left-4 flex gap-2">
-          <span className="rounded-full bg-background/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-sm transition-opacity group-hover:opacity-0">
+          <span className={`rounded-full bg-background/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-sm transition-opacity ${showAfter ? "opacity-0" : "opacity-100"}`}>
             Before
           </span>
-          <span className="rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground opacity-0 transition-opacity group-hover:opacity-100">
+          <span className={`rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground transition-opacity ${showAfter ? "opacity-100" : "opacity-0"}`}>
             After
           </span>
         </div>
-        {/* Hover instruction */}
+        {/* Tap/Hover instruction */}
         <div className="absolute right-4 top-4 flex items-center gap-1 rounded-full bg-background/90 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm">
-          <span>Hover to reveal</span>
+          <span className="md:hidden">Tap to reveal</span>
+          <span className="hidden md:inline">Hover to reveal</span>
           <ArrowUpRight className="h-3 w-3" />
         </div>
       </div>

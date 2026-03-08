@@ -46,7 +46,9 @@ const Navigation = () => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="text-xl font-bold tracking-tight text-foreground md:text-2xl"
+          className={`text-xl font-bold tracking-tight transition-colors duration-300 md:text-2xl ${
+            isScrolled ? "text-foreground" : "text-white"
+          }`}
         >
           Grapul
         </a>

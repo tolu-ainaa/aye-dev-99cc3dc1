@@ -4,7 +4,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Grapul transformed our old site in days. The new design perfectly captures our brand and has significantly improved how customers perceive our business.",
+      "Aye-Dev transformed our old site in days. The new design perfectly captures our brand and has significantly improved how customers perceive our business.",
     author: "Sarah Chen",
     role: "Owner, Wellness Clinic",
   },

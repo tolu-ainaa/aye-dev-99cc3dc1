@@ -21,11 +21,11 @@ const Footer = () => {
 
           {/* Contact email */}
           <a
-            href="mailto:hello@grapul.com"
+            href="mailto:hello@aye-dev.com"
             className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
           >
             <Mail className="h-4 w-4" />
-            <span>hello@grapul.com</span>
+            <span>hello@aye-dev.com</span>
           </a>
 
           {/* Social links */}

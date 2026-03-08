@@ -50,7 +50,7 @@ const Navigation = () => {
             isScrolled ? "text-foreground" : "text-white"
           }`}
         >
-          Grapul
+          Aye-Dev
         </a>
 
         {/* Desktop Navigation */}

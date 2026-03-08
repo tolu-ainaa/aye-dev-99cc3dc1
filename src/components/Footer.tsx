@@ -13,19 +13,19 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Logo and copyright */}
           <div className="text-center md:text-left">
-            <div className="mb-2 text-xl font-bold text-foreground">Grapul</div>
+            <div className="mb-2 text-xl font-bold text-foreground">Aye-Dev</div>
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Grapul. All rights reserved.
+              © {new Date().getFullYear()} Aye-Dev. All rights reserved.
             </p>
           </div>
 
           {/* Contact email */}
           <a
-            href="mailto:hello@grapul.com"
+            href="mailto:hello@aye-dev.com"
             className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
           >
             <Mail className="h-4 w-4" />
-            <span>hello@grapul.com</span>
+            <span>hello@aye-dev.com</span>
           </a>
 
           {/* Social links */}

@@ -48,7 +48,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mx-auto mb-10 max-w-2xl text-lg text-primary-foreground/70 md:text-xl"
         >
-          Grapul helps businesses upgrade old websites with clean design, better
+          Aye-Dev helps businesses upgrade old websites with clean design, better
           usability, and higher trust. Get a free preview of your redesign.
         </motion.p>
 

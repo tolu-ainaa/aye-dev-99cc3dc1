@@ -40,7 +40,7 @@ const WhyGrapul = () => {
           className="mb-12 text-center md:mb-16"
         >
           <h2 className="mb-4 text-heading font-bold md:text-display-sm">
-            Why choose Grapul
+            Why choose Aye-Dev
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-background/70">
             We combine speed, quality, and results-focused design to deliver

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-import beforeMedical from "@/assets/before-medical.jpg";
-import afterMedical from "@/assets/after-medical.jpg";
+import beforeMedical from "@/assets/before-medical.png";
+import afterMedical from "@/assets/after-medical.png";
 import beforeRestaurant from "@/assets/before-restaurant.jpg";
 import afterRestaurant from "@/assets/after-restaurant.jpg";
 import beforeConsultancy from "@/assets/before-consultancy.jpg";

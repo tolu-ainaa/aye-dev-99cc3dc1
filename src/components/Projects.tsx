@@ -73,7 +73,7 @@ const ProjectCard = ({
     >
       {/* Before/After Images */}
       <div
-        className="relative aspect-[4/3] cursor-pointer overflow-hidden"
+        className="relative aspect-[4/3] cursor-pointer overflow-hidden bg-muted"
         onClick={() => setShowAfter(!showAfter)}
         onMouseEnter={() => setShowAfter(true)}
         onMouseLeave={() => setShowAfter(false)}
@@ -82,13 +82,13 @@ const ProjectCard = ({
         <img
           src={project.before}
           alt={`${project.title} before redesign`}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${showAfter ? "opacity-0" : "opacity-100"}`}
+          className={`absolute inset-0 h-full w-full object-contain p-[150px] transition-opacity duration-500 ${showAfter ? "opacity-0" : "opacity-100"}`}
         />
         {/* After Image */}
         <img
           src={project.after}
           alt={`${project.title} after redesign`}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${showAfter ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 h-full w-full object-contain p-[150px] transition-opacity duration-500 ${showAfter ? "opacity-100" : "opacity-0"}`}
         />
         {/* Labels */}
         <div className="absolute bottom-4 left-4 flex gap-2">

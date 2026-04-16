@@ -82,13 +82,13 @@ const ProjectCard = ({
         <img
           src={project.before}
           alt={`${project.title} before redesign`}
-          className={`absolute inset-0 h-full w-full object-contain p-[150px] transition-opacity duration-500 ${showAfter ? "opacity-0" : "opacity-100"}`}
+          className={`absolute inset-0 h-full w-full object-contain p-[50px] transition-opacity duration-500 ${showAfter ? "opacity-0" : "opacity-100"}`}
         />
         {/* After Image */}
         <img
           src={project.after}
           alt={`${project.title} after redesign`}
-          className={`absolute inset-0 h-full w-full object-contain p-[150px] transition-opacity duration-500 ${showAfter ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 h-full w-full object-contain p-[50px] transition-opacity duration-500 ${showAfter ? "opacity-100" : "opacity-0"}`}
         />
         {/* Labels */}
         <div className="absolute bottom-4 left-4 flex gap-2">

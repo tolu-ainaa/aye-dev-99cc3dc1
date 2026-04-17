@@ -22,24 +22,18 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(SHEETS_WEBHOOK_URL, {
+      await fetch(SHEETS_WEBHOOK_URL, {
         method: "POST",
+          mode: "no-cors",
         body: JSON.stringify(formData),
       });
 
-      console.log("Response status:", response.status);
-      const responseText = await response.text();
-      console.log("Response text:", responseText);
-
-      if (response.ok || response.status === 0) {
-        setIsSubmitted(true);
-        toast({
-          title: "Message sent!",
-          description: "We'll get back to you with a redesign concept soon.",
-        });
-      } else {
-        throw new Error(`Server returned ${response.status}`);
-      }
+      // With no-cors, we assume success after the request completes
+      setIsSubmitted(true);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you with a redesign concept soon.",
+      });
     } catch (err) {
       console.error("Form submission failed:", err);
       toast({

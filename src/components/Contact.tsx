@@ -14,19 +14,36 @@ const Contact = () => {
     message: "",
   });
 
+  const SHEETS_WEBHOOK_URL =
+    "https://script.google.com/macros/s/AKfycbxUp_vLmJ38BJ_vn1iow6VZv-54pfJXgLU-ad-FB8oYhJw7ArfztFxwNCUt0L25iIYriQ/exec";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await fetch(SHEETS_WEBHOOK_URL, {
+        method: "POST",
+        // text/plain avoids a CORS preflight that Apps Script doesn't handle.
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you with a redesign concept soon.",
-    });
+      setIsSubmitted(true);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you with a redesign concept soon.",
+      });
+    } catch (err) {
+      console.error("Form submission failed:", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (

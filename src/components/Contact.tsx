@@ -15,26 +15,31 @@ const Contact = () => {
   });
 
   const SHEETS_WEBHOOK_URL =
-    "https://script.google.com/macros/s/AKfycbxUp_vLmJ38BJ_vn1iow6VZv-54pfJXgLU-ad-FB8oYhJw7ArfztFxwNCUt0L25iIYriQ/exec";
+    "https://script.google.com/macros/s/AKfycbyWo4dHbZdR1enH_bFQMaFQpT7iCZ_zZrwJvboj3lQ_QjxKAz-Zpg1zB5OZ7jNMHHlkeQ/exec";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      await fetch(SHEETS_WEBHOOK_URL, {
+      const response = await fetch(SHEETS_WEBHOOK_URL, {
         method: "POST",
-        mode: "no-cors",
-        // text/plain avoids a CORS preflight that Apps Script doesn't handle.
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(formData),
       });
 
-      setIsSubmitted(true);
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you with a redesign concept soon.",
-      });
+      console.log("Response status:", response.status);
+      const responseText = await response.text();
+      console.log("Response text:", responseText);
+
+      if (response.ok || response.status === 0) {
+        setIsSubmitted(true);
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you with a redesign concept soon.",
+        });
+      } else {
+        throw new Error(`Server returned ${response.status}`);
+      }
     } catch (err) {
       console.error("Form submission failed:", err);
       toast({

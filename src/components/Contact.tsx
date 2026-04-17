@@ -15,7 +15,7 @@ const Contact = () => {
   });
 
   const SHEETS_WEBHOOK_URL =
-    "https://script.google.com/macros/s/AKfycbyWo4dHbZdR1enH_bFQMaFQpT7iCZ_zZrwJvboj3lQ_QjxKAz-Zpg1zB5OZ7jNMHHlkeQ/exec";
+    "https://script.google.com/macros/s/AKfycbxS4lytGQ8Q7T-Vj4O-dhNFCbw-xQCCGXQUD8qKGUbn6ZSQiljlI1bok0_VkVWvZJOsLQ/exec";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

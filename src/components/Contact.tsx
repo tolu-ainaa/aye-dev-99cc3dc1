@@ -24,6 +24,7 @@ const Contact = () => {
     try {
       await fetch(SHEETS_WEBHOOK_URL, {
         method: "POST",
+        mode: "no-cors",
         // text/plain avoids a CORS preflight that Apps Script doesn't handle.
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(formData),

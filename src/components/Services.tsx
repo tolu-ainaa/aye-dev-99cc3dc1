@@ -59,11 +59,11 @@ const Services = () => {
           className="mb-12 text-center md:mb-16"
         >
           <h2 className="mb-4 text-heading font-bold text-foreground md:text-display-sm">
-            Our services
+            Website improvement services
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Everything you need to transform your online presence and create a
-            website that works for your business.
+            Everything you need to improve your website and create an online
+            presence that wins trust and converts visitors into customers.
           </p>
         </motion.div>
 

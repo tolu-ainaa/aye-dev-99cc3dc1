@@ -37,11 +37,11 @@ const HowItWorks = () => {
           className="mb-12 text-center md:mb-16"
         >
           <h2 className="mb-4 text-heading font-bold text-foreground md:text-display-sm">
-            How it works
+            How we improve your website
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Our simple three-step process makes getting a new website easy and
-            risk-free.
+            Our simple three-step process makes improving your website easy,
+            transparent, and completely risk-free.
           </p>
         </motion.div>
 
